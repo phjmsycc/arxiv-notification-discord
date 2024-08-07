@@ -1,11 +1,5 @@
-# OpenAIのapiキー
-openAI_key: "YOUR_API_KEY"
-
 # OpenAIのモデルの指定
 model: "gpt-4o-mini"
-
-# DiscordのwebhookのURL
-discord_webhook_url: "webhookのURL"
 
 # arxivの学問領域の指定
 subject: "cat:cond-mat.* OR cat:physics.*"
