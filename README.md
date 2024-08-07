@@ -13,11 +13,11 @@ https://zenn.dev/ozushi/articles/ebe3f47bf50a86 と Carrier-Owl (https://github.
 - リポジトリをForkする。
 - OpenAI の API キーと Discord の webhook URL を取得し、secrets に登録。
 
-![alt text](image-2.png)
+![alt text](data/images/image-2.png)
 
-![alt text](image-1.png)
+![alt text](data/images/image-1.png)
 
-![alt text](image.png)
+![alt text](data/images/image.png)
 
 
 - 適宜 config.yaml のキーワードを設定
