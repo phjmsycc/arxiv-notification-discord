@@ -66,6 +66,7 @@ def search_keyword(
         abstract = article.summary
         score, hit_keywords = calc_score(abstract, keywords)
         if (score != 0) and (score >= score_threshold):
+            print(article) # debug
             results.append(article)
             key.append(hit_keywords)
             scores.append(score)
