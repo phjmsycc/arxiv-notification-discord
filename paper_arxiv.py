@@ -27,7 +27,8 @@ def get_summary(result, model):
                 temperature=0.25,
             )
     summary = response['choices'][0]['message']['content']
-    authors = result.authors # ', '.join(result.authors)
+    authors = [author.name for author in result.authors]
+    authors = ', '.join(authors)
     title_en = result.title
     title, *body = summary.split('\n')
     body = '\n'.join(body)
