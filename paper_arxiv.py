@@ -27,11 +27,12 @@ def get_summary(result, model):
                 temperature=0.25,
             )
     summary = response['choices'][0]['message']['content']
+    authors = ', '.join(result.authors)
     title_en = result.title
     title, *body = summary.split('\n')
     body = '\n'.join(body)
     date_str = result.published.strftime("%Y-%m-%d %H:%M:%S")
-    message = f"発行日: {date_str}\n{result.entry_id}\n{title_en}\n{title}\n{body}\n"
+    message = f"発行日: {date_str}\n{result.entry_id}\n{authors}\n{title_en}\n{title}\n{body}\n"
     
     return message
 
