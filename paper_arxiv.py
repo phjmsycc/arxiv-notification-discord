@@ -7,7 +7,7 @@ import time
 import yaml
 import datetime
 
-def get_summary(result):
+def get_summary(result, model):
     system = """与えられた論文の要点を3点のみでまとめ、以下のフォーマットで日本語で出力してください。```
     『タイトルの日本語訳』
     ・要点1
@@ -19,7 +19,7 @@ def get_summary(result):
 
     text = f"title: {result.title}\nbody: {result.summary}"
     response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model=model,
                 messages=[
                     {'role': 'system', 'content': system},
                     {'role': 'user', 'content': text}
@@ -74,6 +74,7 @@ def search_keyword(
 
 config = get_config()
 api_key = os.getenv('OPENAI_KEY')
+model = config['model']
 DISCORD_WEBHOOK_URL = os.getenv('DISCORD_WEBHOOK_URL')
 subject = config['subject']
 keywords = config['keywords']
@@ -125,7 +126,7 @@ for i,result in enumerate(results):
     score = scores[i]
     try:
         # Discordに投稿するメッセージを組み立てる
-        message = "今日の論文です！ " + str(i+1) + "本目\n" + "スコア：" + str(score) + " キーワード：" + str(keywords) + "\n" + get_summary(result)
+        message = "今日の論文です！ " + str(i+1) + "本目\n" + "スコア：" + str(score) + " キーワード：" + str(keywords) + "\n" + get_summary(result, model)
         # Discordにメッセージを投稿する
         webhook.content = message
         webhook.execute()

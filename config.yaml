@@ -1,25 +1,28 @@
 # OpenAIのapiキー
-openAI_key: 'YOUR_API_KEY'
+openAI_key: "YOUR_API_KEY"
+
+# OpenAIのモデルの指定
+model: "gpt-4o-mini"
 
 # DiscordのwebhookのURL
-discord_webhook_url: 'webhookのURL'
+discord_webhook_url: "webhookのURL"
 
 # arxivの学問領域の指定
-subject: 'cat:cond-mat.* OR cat:physics.*'
+subject: "cat:cond-mat.* OR cat:physics.*"
 
 # 検索キーワード
 keywords:
-        HHG: 3
-        high harmonic generation: 3
-        transition metal dichalcogenides: 3
-        graphene: 3
-        master equation: 3
-        skyrmion: 2
-        nonlinear: 1
-        thz: 1
-        laser: 1
-        floquet: 2
-        stm: 1
+  HHG: 3
+  high harmonic generation: 3
+  transition metal dichalcogenides: 3
+  graphene: 3
+  master equation: 3
+  skyrmion: 2
+  nonlinear: 1
+  thz: 1
+  laser: 1
+  floquet: 2
+  stm: 1
 
 # 通知の閾値
 score_threshold: 2
