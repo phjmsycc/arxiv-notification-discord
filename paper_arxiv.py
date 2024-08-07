@@ -73,8 +73,8 @@ def search_keyword(
 
 
 config = get_config()
-api_key = config['openAI_key']
-DISCORD_WEBHOOK_URL = config['discord_webhook_url']
+api_key = os.getenv('OPENAI_KEY')
+DISCORD_WEBHOOK_URL = os.getenv('DISCORD_WEBHOOK_URL')
 subject = config['subject']
 keywords = config['keywords']
 score_threshold = float(config['score_threshold'])
